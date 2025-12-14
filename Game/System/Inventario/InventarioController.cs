@@ -1,8 +1,5 @@
 using Godot;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Security.Cryptography.X509Certificates;
 
 public partial class InventarioController : Node
 {
@@ -21,8 +18,7 @@ public partial class InventarioController : Node
 
 		inventario = new Inventario(50);
 		inventario.OnItemAdicionado += OnInventarioItemAdicionado;
-
-		Item espada = new Item("Espada", 25f, prevTexture);
+		GameEvents.OnItemColetado += OnItemColetado;
 
 		for(int i = 0; i < 5; i++)
 		{
@@ -30,14 +26,19 @@ public partial class InventarioController : Node
 			slots.Add(newSlot);
 			grid.AddChild(newSlot);
 		}
-
-		if (inventario.AdicionarItem(espada))
-		{
-			GD.Print("O item foi adicionado com sucesso!");
-		}
-
 	}
 
+  public override void _ExitTree()
+  {
+    inventario.OnItemAdicionado -= OnInventarioItemAdicionado;
+		GameEvents.OnItemColetado -= OnItemColetado;
+  }
+
+
+	public void OnItemColetado(Item novoItem)
+	{
+		inventario.AdicionarItem(novoItem);
+	}
 
 	public void OnInventarioItemAdicionado(Item itemAdicionado)
 	{

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://5xili702xh6e"]
+
+[ext_resource type="PackedScene" uid="uid://bo1jv4pog30bj" path="res://Game/System/Inventario/item_coletavel.tscn" id="1_lpn1k"]
+[ext_resource type="Texture2D" uid="uid://cbulinju66w3l" path="res://Assets/Itens/coin/coin_1.png" id="2_lghlq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpn1k"]
+radius = 7.2993145
+
+[node name="Moeda" instance=ExtResource("1_lpn1k")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_lpn1k")
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource("2_lghlq")

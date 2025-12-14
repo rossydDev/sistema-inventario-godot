@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcjtsxe70cso4"]
+[gd_scene load_steps=4 format=3 uid="uid://bcjtsxe70cso4"]
 
 [ext_resource type="Script" uid="uid://bpnxi4g7o6gh" path="res://Game/System/Inventario/InventarioController.cs" id="1_psevp"]
 [ext_resource type="PackedScene" uid="uid://bhbdmxg62t56n" path="res://Game/System/Inventario/slot.tscn" id="2_cdxo4"]
+[ext_resource type="PackedScene" uid="uid://5xili702xh6e" path="res://Game/System/Inventario/Itens/moeda.tscn" id="3_08ifl"]
 
 [node name="Teste" type="Node2D"]
 
@@ -23,3 +24,18 @@ offset_bottom = 643.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 50
+
+[node name="Moeda" parent="." instance=ExtResource("3_08ifl")]
+position = Vector2(214, 412)
+
+[node name="Moeda2" parent="." instance=ExtResource("3_08ifl")]
+position = Vector2(167, 153)
+
+[node name="Moeda3" parent="." instance=ExtResource("3_08ifl")]
+position = Vector2(118, 312)
+
+[node name="Moeda4" parent="." instance=ExtResource("3_08ifl")]
+position = Vector2(295, 207)
+
+[node name="Moeda5" parent="." instance=ExtResource("3_08ifl")]
+position = Vector2(499, 295)
