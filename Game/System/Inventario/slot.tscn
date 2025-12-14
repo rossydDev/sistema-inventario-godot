@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhbdmxg62t56n"]
+
+[ext_resource type="Texture2D" uid="uid://d3ik3ka6xiwpi" path="res://icon.svg" id="1_722a6"]
+[ext_resource type="Script" uid="uid://bhn21jvrw0qw6" path="res://Game/System/Inventario/Slot.cs" id="1_yhrcm"]
+
+[node name="Slot" type="Panel" node_paths=PackedStringArray("texture", "name")]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_yhrcm")
+texture = NodePath("Container/Sprite")
+name = NodePath("Container/Name")
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite" type="TextureRect" parent="Container"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("1_722a6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Container"]
+layout_mode = 2
+text = "Teste"
+horizontal_alignment = 1
+uppercase = true
